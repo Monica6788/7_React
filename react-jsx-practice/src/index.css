@@ -1,0 +1,34 @@
+:root {
+  color-scheme: light;
+  font-family:
+    system-ui, -apple-system, 'Segoe UI', 'Noto Sans KR', 'Apple SD Gothic Neo',
+    'Malgun Gothic', sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+
+  /* ===== 색상 변수 ===== */
+  --color-text: #1f2328;
+  --color-bg: #f6f8fa;
+  --color-surface: #fff;
+  --color-code-bg: #eaeef2;
+  --color-border: #d0d7de;
+  --color-border-strong: #8c959f;
+  --color-highlight-bg: #fff3bf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+code {
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  background: var(--color-code-bg);
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
