@@ -1,0 +1,82 @@
+/* ===== 실습 코드에서 사용하는 공용 스타일 ===== */
+.highlight {
+  background: var(--color-highlight-bg);
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 10px 0;
+  background: var(--color-surface);
+}
+
+.card h3 {
+  margin: 0 0 4px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+button {
+  font: inherit;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-bg);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/* ===== 메뉴 / 페이지 컴포넌트 ===== */
+.menu {
+  display: flex;
+  gap: 6px;
+  padding: 8px;
+  background: var(--color-menu-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.menu-item {
+  font: inherit;
+  color: var(--color-text);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.menu-item:hover {
+  background: var(--color-menu-hover);
+}
+
+.menu-item.active {
+  background: var(--color-menu-active);
+  color: var(--color-menu-active-text);
+  font-weight: 600;
+}
+
+.page {
+  margin-top: 10px;
+  padding: 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.page h2 {
+  margin-top: 0;
+}
