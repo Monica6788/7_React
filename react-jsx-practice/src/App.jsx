@@ -11,6 +11,8 @@ import Example1 from './lessons/01-jsx-basic/Example'
 // import 한 다음에는 <Example1></Example1> 또는 <Example1 />
 import Example2 from './lessons/02-expression/Example'
 import Example3 from './lessons/03-attribute/Example'
+import Example4 from './lessons/04-condition/Example'
+import Example5 from './lessons/05-lists/Example'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <Example1 />
       <Example2 />
       <Example3 />
+      <Example4 />
+      <Example5 />
     </>
   )
 }
