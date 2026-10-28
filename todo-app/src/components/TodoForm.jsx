@@ -29,10 +29,10 @@ const Select = styled.select`
   background: #fff;
 `
 
-function TodoForm() {
+function TodoForm( {defaultCategory = 'study'} ) {
     const [title, setTitle] = useState('')
     const [memo, setMemo] = useState('')
-    const [category, setCategory] = useState('study')
+    const [category, setCategory] = useState(defaultCategory)
 
     const addTodo = useTodoStore( (state) => state.addTodo )
 
