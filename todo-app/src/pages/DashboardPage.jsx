@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Link } from "react-router-dom"
 
 import { Card, PageTitle } from "../styles/common"
+import { useTodoStore } from '../store/useTodoStore'
 
 const Stats = styled.div`
   display: grid;
@@ -41,6 +42,10 @@ const CategoryCard = styled(Link)`
 `
 
 function DashboardPage() {
+    const todos = useTodoStore( (state) => state.todos )
+    const doneTodos = todos.filter( (todo) => todo.done === true )
+    const ongoingTodos = todos.filter( (todo) => todo.done === false )
+
     return (
         <>
             <PageTitle>DashBoard</PageTitle>
@@ -48,15 +53,15 @@ function DashboardPage() {
             <Stats>
                 <Card>
                     <div>ALL</div>
-                    <StatNumber>0</StatNumber>
+                    <StatNumber>{todos.length}</StatNumber>
                 </Card>
                 <Card>
                     <div>DONE</div>
-                    <StatNumber>0</StatNumber>
+                    <StatNumber>{doneTodos.length}</StatNumber>
                 </Card>
                 <Card>
-                    <div>NOT-DONE</div>
-                    <StatNumber>0</StatNumber>
+                    <div>ONGOING</div>
+                    <StatNumber>{ongoingTodos.length}</StatNumber>
                 </Card>
             </Stats>
 
