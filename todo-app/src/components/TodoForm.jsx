@@ -50,7 +50,7 @@ function TodoForm( {defaultCategory = 'study'} ) {
     }
 
     return (
-        <Card sytle={{marginBottom: 20}}>
+        <Card style={{marginBottom: 20}}>
             <Form>
                 <Row>
                     <Input placeholder="Enter your todo"
