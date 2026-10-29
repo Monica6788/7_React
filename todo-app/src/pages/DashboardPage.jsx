@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 import { Card, PageTitle } from "../styles/common"
 import { useTodoStore } from '../store/useTodoStore'
 
+import TodoList from '../components/TodoList'
+
 const Stats = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -45,6 +47,13 @@ function DashboardPage() {
     const todos = useTodoStore( (state) => state.todos )
     const doneTodos = todos.filter( (todo) => todo.done === true )
     const ongoingTodos = todos.filter( (todo) => todo.done === false )
+    const studyTodos = todos.filter( (todo) => todo.category === 'study')
+    const workTodos = todos.filter( (todo) => todo.category === 'work')
+    const lifeTodos = todos.filter( (todo) => todo.category === 'life')
+    // 현재 날짜는 문자열로 저장되어 있으니 날짜로 바꿔서 계산
+    const recentTodos = [...todos].sort( (a, b) => (new Date(b.createdAt) 
+                                                  - new Date(a.createdAt)))
+                                  .slice(0, 3)
 
     return (
         <>
@@ -66,12 +75,28 @@ function DashboardPage() {
             </Stats>
 
             <SectionTitle>카테고리별</SectionTitle>
-            <CategoryGrid>
+            <Stats>
+              <Card>
+                <div>STUDY</div>
+                <StatNumber>{studyTodos.length}</StatNumber>
+              </Card>
 
-            </CategoryGrid>
+              <Card>
+                <div>WORK</div>
+                <StatNumber>{workTodos.length}</StatNumber>
+              </Card>
+
+              <Card>
+                <div>LIFE</div>
+                <StatNumber>{lifeTodos.length}</StatNumber>
+              </Card>
+            </Stats>
 
             <SectionTitle>최근 할 일</SectionTitle>
             {/* TODO: 할일 목록 표시 */}
+            <TodoList todos={recentTodos} />
+
+            
         </>
     )
 }
