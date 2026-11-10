@@ -1,0 +1,49 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background: #fafafa;
+  color: #222;
+}
+
+.container {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+}
+
+.form label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form input {
+  width: 100px;
+  padding: 6px;
+}
+
+button {
+  margin-top: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.error {
+  color: #c0392b;
+  word-break: break-all;
+}
+
+.result {
+  margin-top: 24px;
+}
+
+.chart {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 8px 4px;
+}
