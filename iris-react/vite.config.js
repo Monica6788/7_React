@@ -10,6 +10,9 @@ export default defineConfig({
     port: 5173,
     proxy: {
       // /api/predict -> http://localhost:8080/api/predict
+      // 프록시가 우회시켜주어서 CORS 문제가 발생하지 않음
+      // 개발 단계에서만 이런 방법을 쓴다
+      // 배포 단계에서는 Spring에서 CORS 설정을 해주어야 한다.
       "/api": "http://localhost:8080",
     },
   },
